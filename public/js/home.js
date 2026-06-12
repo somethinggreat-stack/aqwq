@@ -40,11 +40,10 @@
     
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => {
-        // Reduced delay for snappier feel
-        requestAnimationFrame(() => setTimeout(openModalNow, 300));
+        requestAnimationFrame(() => setTimeout(openModalNow, 5000));
       });
     } else {
-      requestAnimationFrame(() => setTimeout(openModalNow, 300));
+      requestAnimationFrame(() => setTimeout(openModalNow, 5000));
     }
   })();
 

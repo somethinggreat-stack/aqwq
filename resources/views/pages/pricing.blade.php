@@ -5,20 +5,22 @@
 
 @section('page-content')
 
-{{-- ============ BNPL STRIPE ============ --}}
-<div class="bg-royal-900 border-b border-royal-700 py-4" style="padding-top: calc(5rem + 1rem);">
-  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
-      <div class="flex items-center gap-2 text-royal-100">
-        <svg class="w-5 h-5 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20"/><path d="M6 16h4"/></svg>
-        <span class="text-sm font-semibold">Pay Over Time &mdash; 4 interest-free payments</span>
+{{-- ============ NAV SPACER + BNPL STRIPE ============ --}}
+<div style="padding-top:5rem;">{{-- clears fixed nav (h-20 = 5rem) --}}
+  <div class="bg-white border-b border-royal-100 py-4">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+        <div class="flex items-center gap-2 text-royal-700">
+          <svg class="w-5 h-5 text-gold-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20"/><path d="M6 16h4"/></svg>
+          <span class="text-sm font-semibold">Pay Over Time &mdash; 4 interest-free payments</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-2">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide" style="background:#000; color:#b2fce4;">sezzle</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide" style="background:#b2fce4; color:#000;">Afterpay</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide" style="background:#1a0633; color:#fff;">Zip</span>
+        </div>
+        <span class="text-xs text-royal-500/60 hidden sm:inline">available at checkout</span>
       </div>
-      <div class="flex flex-wrap items-center justify-center gap-2">
-        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide" style="background:#000; color:#b2fce4;">sezzle</span>
-        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide" style="background:#b2fce4; color:#000;">Afterpay</span>
-        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide" style="background:#1a0633; color:#fff;">Zip</span>
-      </div>
-      <span class="text-xs text-royal-300/60 hidden sm:inline">available at checkout</span>
     </div>
   </div>
 </div>
@@ -196,33 +198,6 @@
   </div>
 </section>
 
-{{-- ============ FAQ ============ --}}
-<section class="py-20 lg:py-28 bg-royal-50">
-  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12" data-reveal>
-      <div class="eyebrow justify-center">Pricing FAQ</div>
-      <h2 class="section-title">Common questions about<br/>our packages.</h2>
-    </div>
-    <div class="space-y-3">
-      @php
-        $faqs = [
-          ['q' => 'What is the difference between Single and Duo?', 'a' => 'Single covers one person\'s credit file. Duo lets you bring a spouse, family member, or business partner — both files get the same scope of work at a reduced combined rate.'],
-          ['q' => 'Is this a monthly subscription or one-time?', 'a' => 'Credit repair packages (Standard, Expedited, Premium) are one-time investments — not monthly subscriptions. The Community access ($97/mo) is month-to-month and can be cancelled anytime.'],
-          ['q' => 'How fast will I see results?', 'a' => 'Standard 3-Round packages typically show visible results in 30–90 days. Our Expedited package is designed for fast-track results in as little as 14–30 days using priority dispute processing.'],
-          ['q' => 'Can I pay over time?', 'a' => 'Yes. We offer 4 interest-free installments through Sezzle, Afterpay, and Zip. Select your preferred option at checkout.'],
-          ['q' => 'What if I want to upgrade my package later?', 'a' => 'You can upgrade from Standard to Expedited or Premium at any time. We apply your initial payment toward the upgrade — just reach out to your advisor.'],
-        ];
-      @endphp
-      @foreach($faqs as $i => $faq)
-      <details class="faq" data-reveal data-delay="{{ $i + 1 }}">
-        <summary>{{ $faq['q'] }}</summary>
-        <p>{{ $faq['a'] }}</p>
-      </details>
-      @endforeach
-    </div>
-  </div>
-</section>
-
 {{-- ============ COMMUNITY CARD ============ --}}
 <section class="py-16 lg:py-20 bg-gradient-to-b from-white to-royal-50">
   <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -249,6 +224,33 @@
           <a href="{{ config('site.links.skool', '#') }}" target="_blank" rel="noopener" class="mt-6 inline-flex btn-gold text-base">Join the Community →</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+{{-- ============ FAQ ============ --}}
+<section class="py-20 lg:py-28 bg-royal-50">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" data-reveal>
+      <div class="eyebrow justify-center">Pricing FAQ</div>
+      <h2 class="section-title">Common questions about<br/>our packages.</h2>
+    </div>
+    <div class="space-y-3">
+      @php
+        $faqs = [
+          ['q' => 'What is the difference between Single and Duo?', 'a' => 'Single covers one person\'s credit file. Duo lets you bring a spouse, family member, or business partner — both files get the same scope of work at a reduced combined rate.'],
+          ['q' => 'Is this a monthly subscription or one-time?', 'a' => 'Credit repair packages (Standard, Expedited, Premium) are one-time investments — not monthly subscriptions. The Community access ($97/mo) is month-to-month and can be cancelled anytime.'],
+          ['q' => 'How fast will I see results?', 'a' => 'Standard 3-Round packages typically show visible results in 30–90 days. Our Expedited package is designed for fast-track results in as little as 14–30 days using priority dispute processing.'],
+          ['q' => 'Can I pay over time?', 'a' => 'Yes. We offer 4 interest-free installments through Sezzle, Afterpay, and Zip. Select your preferred option at checkout.'],
+          ['q' => 'What if I want to upgrade my package later?', 'a' => 'You can upgrade from Standard to Expedited or Premium at any time. We apply your initial payment toward the upgrade — just reach out to your advisor.'],
+        ];
+      @endphp
+      @foreach($faqs as $i => $faq)
+      <details class="faq" data-reveal data-delay="{{ $i + 1 }}">
+        <summary>{{ $faq['q'] }}</summary>
+        <p>{{ $faq['a'] }}</p>
+      </details>
+      @endforeach
     </div>
   </div>
 </section>
