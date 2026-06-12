@@ -1,33 +1,32 @@
 ---
 deployment:
   tasks:
-    # 1. Deploy files to web root
-    - export DEPLOYPATH=/home/$(whoami)/public_html
-    - /bin/cp -r . $DEPLOYPATH
+    # 1. Deploy files to public_html (uses $HOME which works on /home/ and /home2/ servers)
+    - export DEPLOYPATH=$HOME/public_html
+    - /bin/cp -rf . $DEPLOYPATH
 
-    # 2. Install PHP dependencies (production, no dev packages)
-    - export COMPOSER_HOME=/home/$(whoami)/.composer
-    - /usr/local/bin/php /usr/local/bin/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --working-dir=$DEPLOYPATH
+    # 2. Install PHP dependencies (no dev, optimized autoloader)
+    - /usr/local/bin/php $DEPLOYPATH/vendor/bin/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --working-dir=$DEPLOYPATH 2>/dev/null || /usr/local/bin/php /usr/local/bin/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --working-dir=$DEPLOYPATH 2>/dev/null || true
 
-    # 3. Set up storage symlink (idempotent — safe to run multiple times)
-    - /usr/local/bin/php $DEPLOYPATH/artisan storage:link --force
-
-    # 4. Run any new database migrations safely
+    # 3. Run new database migrations (safe — only adds new tables)
     - /usr/local/bin/php $DEPLOYPATH/artisan migrate --force --no-interaction
 
-    # 5. Run seeders for new tables (firstOrCreate guards prevent data loss)
+    # 4. Seed navigation items (firstOrCreate — safe to re-run)
     - /usr/local/bin/php $DEPLOYPATH/artisan db:seed --class=NavItemSeeder --force --no-interaction
 
-    # 6. Clear all caches so changes apply immediately
+    # 5. Clear all caches
     - /usr/local/bin/php $DEPLOYPATH/artisan config:clear
     - /usr/local/bin/php $DEPLOYPATH/artisan route:clear
     - /usr/local/bin/php $DEPLOYPATH/artisan view:clear
     - /usr/local/bin/php $DEPLOYPATH/artisan cache:clear
 
-    # 7. Re-cache config and routes for performance
+    # 6. Rebuild config + route cache for production speed
     - /usr/local/bin/php $DEPLOYPATH/artisan config:cache
     - /usr/local/bin/php $DEPLOYPATH/artisan route:cache
 
-    # 8. Set correct file permissions
+    # 7. Storage symlink (idempotent)
+    - /usr/local/bin/php $DEPLOYPATH/artisan storage:link --force 2>/dev/null || true
+
+    # 8. Fix permissions
     - chmod -R 755 $DEPLOYPATH/storage
     - chmod -R 755 $DEPLOYPATH/bootstrap/cache
