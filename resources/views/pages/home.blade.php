@@ -45,57 +45,7 @@
     <span>{{ cms('home.announce.line2', 'Limited spots for this intake') }}</span>
   </div>
 
-  <!-- ============== NAV ============== -->
-  <header id="nav" class="fixed inset-x-0 z-50">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <a href="#top" class="flex items-center">
-          <img src="{{ cms_image('branding.logo', 'images/logo.jpeg') }}" alt="AQ Wealth University" class="brand-logo" loading="eager" />
-        </a>
-
-        @php $navItems = \App\Models\NavItem::where('is_active', true)->orderBy('sort')->get(); @endphp
-        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-          @if($navItems->isNotEmpty())
-            @foreach($navItems as $navItem)
-              <a href="{{ $navItem->url }}" target="{{ $navItem->target }}" class="nav-link transition">{{ $navItem->label }}</a>
-            @endforeach
-          @else
-            <a href="#services" class="nav-link transition">{{ cms('home.extra.nav_services', 'Services') }}</a>
-            <a href="#pricing"  class="nav-link transition">{{ cms('home.extra.nav_pricing', 'Pricing') }}</a>
-            <a href="#mentorship" class="nav-link transition">{{ cms('home.extra.nav_mentorship', 'Mentorship') }}</a>
-            <a href="#business-setup" class="nav-link transition">{{ cms('home.extra.nav_business', 'Business Setup') }}</a>
-            <a href="{{ route('funding') }}" class="nav-link transition">{{ cms('home.extra.nav_funding', 'Funding') }}</a>
-            <a href="#faq"      class="nav-link transition">{{ cms('home.extra.nav_faq', 'FAQ') }}</a>
-          @endif
-        </nav>
-
-        <div class="flex items-center gap-3">
-          <a href="{{ config('site.links.skool') }}" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex btn-gold text-sm">{{ cms('home.hero.cta_community', 'Join the Community') }}</a>
-          <button id="menuBtn" class="lg:hidden p-2" aria-label="Open menu">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div id="mobileMenu" class="hidden lg:hidden bg-white/95 border-t border-royal-100">
-      <nav class="px-6 py-4 flex flex-col gap-3 text-royal-800 font-medium">
-        @if($navItems->isNotEmpty())
-          @foreach($navItems as $navItem)
-            <a href="{{ $navItem->url }}" target="{{ $navItem->target }}" class="py-2">{{ $navItem->label }}</a>
-          @endforeach
-        @else
-          <a href="#services" class="py-2">{{ cms('home.extra.nav_services', 'Services') }}</a>
-          <a href="#pricing"  class="py-2">{{ cms('home.extra.nav_pricing', 'Pricing') }}</a>
-          <a href="#mentorship" class="py-2">{{ cms('home.extra.nav_mentorship', 'Mentorship') }}</a>
-          <a href="#business-setup" class="py-2">{{ cms('home.extra.nav_business', 'Business Setup') }}</a>
-          <a href="{{ route('funding') }}" class="py-2">{{ cms('home.extra.nav_funding', 'Funding') }}</a>
-          <a href="#faq"      class="py-2">{{ cms('home.extra.nav_faq', 'FAQ') }}</a>
-        @endif
-        <a href="{{ config('site.links.skool') }}" target="_blank" rel="noopener noreferrer" class="btn-gold mt-2 text-center">{{ cms('home.hero.cta_community', 'Join the Community') }}</a>
-      </nav>
-    </div>
-  </header>
+  @include('partials.site-nav')
 
   <!-- ============== HERO ============== -->
   <section id="top" class="relative overflow-hidden pt-36 lg:pt-44 pb-24 lg:pb-32 hero-bg">
@@ -181,53 +131,53 @@
       </div>
 
       <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="service-card" data-reveal data-delay="1">
+        <div class="service-card" data-reveal data-delay="1" style="cursor:pointer;" onclick="window.location.href='/services'">
           <div class="service-aurora"></div>
           <span class="service-num">01</span>
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 109-9"/><path d="M3 12V3h9"/><path d="m8 12 3 3 5-6"/></svg></div>
           <h3>{{ cms('home.services.card1_title', 'Credit Repair') }}</h3>
           <p>{{ cms('home.services.card1_desc', 'Disputes, deletions, and strategy to remove negative items and lift your score quickly.') }}</p>
-          <a href="#contact" class="service-arrow" aria-label="Learn more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a href="/services" class="service-arrow" aria-label="Learn more about Credit Repair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </div>
-        <div class="service-card" data-reveal data-delay="2">
+        <div class="service-card" data-reveal data-delay="2" style="cursor:pointer;" onclick="window.location.href='/services'">
           <div class="service-aurora"></div>
           <span class="service-num">02</span>
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg></div>
           <h3>{{ cms('home.services.card2_title', 'Rebuilding Credit') }}</h3>
           <p>{{ cms('home.services.card2_desc', 'Tradelines, utilization strategy, and credit mix done right so your score holds and grows.') }}</p>
-          <a href="#contact" class="service-arrow" aria-label="Learn more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a href="/services" class="service-arrow" aria-label="Learn more about Rebuilding Credit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </div>
-        <div class="service-card" data-reveal data-delay="3">
+        <div class="service-card" data-reveal data-delay="3" style="cursor:pointer;" onclick="window.location.href='/business-setup'">
           <div class="service-aurora"></div>
           <span class="service-num">03</span>
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></div>
           <h3>{{ cms('home.services.card3_title', 'Business Structure') }}</h3>
           <p>{{ cms('home.services.card3_desc', 'LLC formation, EIN, bank accounts, and compliance, all set up so lenders take you seriously.') }}</p>
-          <a href="#contact" class="service-arrow" aria-label="Learn more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a href="/business-setup" class="service-arrow" aria-label="Learn more about Business Structure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </div>
-        <div class="service-card" data-reveal data-delay="1">
+        <div class="service-card" data-reveal data-delay="1" style="cursor:pointer;" onclick="window.location.href='/business-setup'">
           <div class="service-aurora"></div>
           <span class="service-num">04</span>
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20"/><path d="M6 16h4"/></svg></div>
           <h3>{{ cms('home.services.card4_title', 'Business Credit') }}</h3>
           <p>{{ cms('home.services.card4_desc', 'Establish Dun & Bradstreet, vendor accounts, and trade lines to unlock real corporate credit.') }}</p>
-          <a href="#contact" class="service-arrow" aria-label="Learn more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a href="/business-setup" class="service-arrow" aria-label="Learn more about Business Credit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </div>
-        <div class="service-card" data-reveal data-delay="2">
+        <div class="service-card" data-reveal data-delay="2" style="cursor:pointer;" onclick="window.location.href='{{ route('funding') }}'">
           <div class="service-aurora"></div>
           <span class="service-num">05</span>
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
           <h3>{{ cms('home.services.card5_title', 'Personal & Business Funding') }}</h3>
           <p>{{ cms('home.services.card5_desc', 'Personal lines, business lines of credit, and capital placement, stacked the smart way.') }}</p>
-          <a href="#contact" class="service-arrow" aria-label="Learn more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a href="{{ route('funding') }}" class="service-arrow" aria-label="Learn more about Funding"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </div>
-        <div class="service-card" data-reveal data-delay="3">
+        <div class="service-card" data-reveal data-delay="3" style="cursor:pointer;" onclick="window.location.href='/community'">
           <div class="service-aurora"></div>
           <span class="service-num">06</span>
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
           <h3>{{ cms('home.services.card6_title', 'Wealth University') }}</h3>
           <p>{{ cms('home.services.card6_desc', 'Live trainings, replays, frameworks, and a community of people moving in the same direction as you.') }}</p>
-          <a href="#contact" class="service-arrow" aria-label="Learn more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a href="/community" class="service-arrow" aria-label="Learn more about Wealth University"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </div>
       </div>
     </div>
@@ -573,7 +523,7 @@
             </div>
             <div class="text-right">
               <div class="font-display text-5xl font-bold gold-text leading-none">{!! cms('home.extra.community_price', '$99<span class="text-lg align-top ml-1 text-gold-200">/mo</span>') !!}</div>
-              <a href="{{ config('site.links.skool') }}" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex btn-gold">{{ cms('home.hero.cta_community', 'Join the Community') }}</a>
+              <a href="{{ route('community') }}" class="mt-4 inline-flex btn-gold">{{ cms('home.hero.cta_community', 'Join the Community') }}</a>
             </div>
           </div>
         </div>
@@ -1742,38 +1692,7 @@
     </div>
   </section>
 
-  <!-- ============== FOOTER ============== -->
-  <footer class="bg-royal-950 text-royal-200 py-12">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10">
-      <div>
-        <div class="flex items-center">
-          <img src="{{ cms_image('branding.logo', 'images/logo.jpeg') }}" alt="AQ Wealth University" class="brand-logo" />
-        </div>
-        <p class="mt-4 text-sm text-royal-300/80 italic font-display">{{ cms('home.footer.tagline', 'From knowledge to wisdom. From wisdom to wealth.') }}</p>
-      </div>
-      <div>
-        <div class="text-xs uppercase tracking-widest text-gold-400 mb-3">{{ cms('home.extra.footer_explore_heading', 'Explore') }}</div>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#services" class="hover:text-white transition">{{ cms('home.extra.nav_services', 'Services') }}</a></li>
-          <li><a href="#pricing" class="hover:text-white transition">{{ cms('home.extra.nav_pricing', 'Pricing') }}</a></li>
-          <li><a href="#mentorship" class="hover:text-white transition">{{ cms('home.extra.nav_mentorship', 'Mentorship') }}</a></li>
-          <li><a href="#business-setup" class="hover:text-white transition">{{ cms('home.extra.nav_business', 'Business Setup') }}</a></li>
-          <li><a href="{{ route('funding') }}" class="hover:text-white transition">{{ cms('home.extra.nav_funding', 'Funding') }}</a></li>
-          <li><a href="#faq" class="hover:text-white transition">{{ cms('home.extra.nav_faq', 'FAQ') }}</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="text-xs uppercase tracking-widest text-gold-400 mb-3">{{ cms('home.extra.footer_contact_heading', 'Contact') }}</div>
-        <ul class="space-y-2 text-sm">
-          <li>{{ cms('home.extra.footer_email_label', 'Email:') }} <a href="mailto:{{ config('site.contact_email') }}" class="hover:text-white transition">{{ config('site.contact_email') }}</a></li>
-          <li>{{ cms('home.extra.footer_hours_label', 'Hours:') }} {{ config('site.business_hours') }}</li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-10 border-t border-royal-800 pt-6 text-center text-xs text-royal-400">
-      © <span data-year></span> {{ config('app.name') }}. {{ cms('home.extra.footer_rights', 'All rights reserved.') }}
-    </div>
-  </footer>
+  @include('partials.site-footer')
 
   <!-- ============== POPUP CREDIT REPAIR MODAL ============== -->
   <div id="creditModal" class="modal-overlay" role="dialog" aria-hidden="true" aria-labelledby="creditModalTitle">

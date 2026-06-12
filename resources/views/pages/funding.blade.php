@@ -1,59 +1,15 @@
 @extends('layouts.app')
 
 @section('title', 'Business Funding | AQ Wealth University')
-@section('description', 'Apply for business funding through AQ Wealth University. Lines of credit, term loans, SBA loans, equipment financing, and 0 0X0P+0PR business credit cards.')
+@section('description', 'Apply for business funding through AQ Wealth University. Lines of credit, term loans, SBA loans, equipment financing, and 0% APR business credit cards.')
 
 @push('styles')
+  <link rel="stylesheet" href="{{ asset('css/home.css') }}">
   <link rel="stylesheet" href="{{ asset('css/funding.css') }}">
 @endpush
 
 @section('content')
-
-  <!-- ============== ANNOUNCEMENT BAR ============== -->
-  <div id="announceBar" class="announce-bar">
-    <span>{!! cms('funding.announce_main', '<strong>Funding Available</strong> · Pre-qualify in under 5 minutes') !!}</span>
-    <span class="sep">·</span>
-    <span>{{ cms('funding.announce_sub', 'Soft pull, no impact on your credit') }}</span>
-  </div>
-
-  <!-- ============== NAV ============== -->
-  <header id="nav" class="fixed inset-x-0 z-50">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <a href="{{ route('home') }}" class="flex items-center">
-          <img src="{{ cms_image('branding.logo', 'images/logo.jpeg') }}" alt="AQ Wealth University" class="brand-logo" />
-        </a>
-
-        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-          <a href="{{ route('home') }}#services" class="nav-link transition">{{ cms('funding.nav_services', 'Services') }}</a>
-          <a href="{{ route('home') }}#pricing"  class="nav-link transition">{{ cms('funding.nav_pricing', 'Pricing') }}</a>
-          <a href="{{ route('home') }}#mentorship" class="nav-link transition">{{ cms('funding.nav_mentorship', 'Mentorship') }}</a>
-          <a href="{{ route('home') }}#business-setup" class="nav-link transition">{{ cms('funding.nav_business_setup', 'Business Setup') }}</a>
-          <a href="{{ route('funding') }}" class="nav-link active transition">{{ cms('funding.nav_funding', 'Funding') }}</a>
-          <a href="{{ route('home') }}#faq" class="nav-link transition">{{ cms('funding.nav_faq', 'FAQ') }}</a>
-        </nav>
-
-        <div class="flex items-center gap-3">
-          <a href="#apply" class="hidden sm:inline-flex btn-gold text-sm">{{ cms('funding.nav_apply_cta', 'Apply Now') }}</a>
-          <button id="menuBtn" class="lg:hidden p-2" aria-label="Open menu">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div id="mobileMenu" class="hidden lg:hidden bg-white/95 backdrop-blur border-t border-royal-100">
-      <nav class="px-6 py-4 flex flex-col gap-3 text-royal-800 font-medium">
-        <a href="{{ route('home') }}#services" class="py-2">{{ cms('funding.nav_services', 'Services') }}</a>
-        <a href="{{ route('home') }}#pricing"  class="py-2">{{ cms('funding.nav_pricing', 'Pricing') }}</a>
-        <a href="{{ route('home') }}#mentorship" class="py-2">{{ cms('funding.nav_mentorship', 'Mentorship') }}</a>
-        <a href="{{ route('home') }}#business-setup" class="py-2">{{ cms('funding.nav_business_setup', 'Business Setup') }}</a>
-        <a href="{{ route('funding') }}" class="py-2 text-gold-600 font-semibold">{{ cms('funding.nav_funding', 'Funding') }}</a>
-        <a href="{{ route('home') }}#faq" class="py-2">{{ cms('funding.nav_faq', 'FAQ') }}</a>
-        <a href="#apply" class="btn-gold mt-2 text-center">{{ cms('funding.nav_apply_cta', 'Apply Now') }}</a>
-      </nav>
-    </div>
-  </header>
+  @include('partials.site-nav')
 
   <!-- ============== HERO ============== -->
   <section id="top" class="relative overflow-hidden pt-36 lg:pt-44 pb-20 hero-bg text-white">
@@ -537,31 +493,7 @@
     </div>
   </section>
 
-  <!-- ============== FOOTER ============== -->
-  <footer class="bg-royal-950 text-royal-200 py-12">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10">
-      <div>
-        <div class="flex items-center">
-          <img src="{{ cms_image('branding.logo', 'images/logo.jpeg') }}" alt="AQ Wealth University" class="brand-logo" style="height:48px;" />
-        </div>
-        <p class="mt-4 text-sm text-royal-300/80 italic font-display">{{ cms('funding.footer_tagline', 'From knowledge to wisdom. From wisdom to wealth.') }}</p>
-      </div>
-      <div>
-        <div class="text-xs uppercase tracking-widest text-gold-400 mb-3">{{ cms('funding.footer_explore_heading', 'Explore') }}</div>
-        <ul class="space-y-2 text-sm">
-          <li><a href="{{ route('home') }}#services" class="hover:text-gold-300">{{ cms('funding.nav_services', 'Services') }}</a></li>
-          <li><a href="{{ route('home') }}#pricing" class="hover:text-gold-300">{{ cms('funding.nav_pricing', 'Pricing') }}</a></li>
-          <li><a href="{{ route('home') }}#mentorship" class="hover:text-gold-300">{{ cms('funding.nav_mentorship', 'Mentorship') }}</a></li>
-          <li><a href="{{ route('funding') }}" class="hover:text-gold-300">{{ cms('funding.nav_funding', 'Funding') }}</a></li>
-          <li><a href="{{ route('home') }}#faq" class="hover:text-gold-300">{{ cms('funding.nav_faq', 'FAQ') }}</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="text-xs uppercase tracking-widest text-gold-400 mb-3">{{ cms('funding.footer_legal_heading', 'Legal') }}</div>
-        <p class="text-xs text-royal-300/70 leading-relaxed">© <span data-year></span> {{ cms('funding.footer_legal_text', 'AQ Wealth University. All rights reserved. AQ Wealth University is not a lender. We connect qualified applicants with third-party lenders. Funding terms, rates, and approvals are determined by the lender, not AQ Wealth University. Results vary by individual.') }}</p>
-      </div>
-    </div>
-  </footer>
+  @include('partials.site-footer')
 
   <!-- ============== JS ============== -->
 @endsection

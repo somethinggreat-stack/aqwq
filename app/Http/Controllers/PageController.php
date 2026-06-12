@@ -18,6 +18,36 @@ class PageController extends Controller
         return view('pages.funding');
     }
 
+    public function services()
+    {
+        return view('pages.services');
+    }
+
+    public function pricing()
+    {
+        return view('pages.pricing');
+    }
+
+    public function mentorship()
+    {
+        return view('pages.mentorship');
+    }
+
+    public function businessSetup()
+    {
+        return view('pages.business-setup');
+    }
+
+    public function faq()
+    {
+        return view('pages.faq');
+    }
+
+    public function community()
+    {
+        return view('pages.community');
+    }
+
     public function intake(Request $request)
     {
         return view('pages.intake', [

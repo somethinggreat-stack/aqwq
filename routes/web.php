@@ -17,9 +17,15 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 Route::get('/', [PageController::class, 'home'])->name('home');
-Route::get('/funding',    [PageController::class, 'funding'])->name('funding');
-Route::get('/intake',     [PageController::class, 'intake'])->name('intake');
-Route::get('/onboarding', [PageController::class, 'onboarding'])->name('onboarding');
+Route::get('/funding',       [PageController::class, 'funding'])->name('funding');
+Route::get('/services',      [PageController::class, 'services'])->name('services');
+Route::get('/pricing',       [PageController::class, 'pricing'])->name('pricing');
+Route::get('/mentorship',    [PageController::class, 'mentorship'])->name('mentorship');
+Route::get('/business-setup',[PageController::class, 'businessSetup'])->name('business-setup');
+Route::get('/faq',           [PageController::class, 'faq'])->name('faq');
+Route::get('/community',     [PageController::class, 'community'])->name('community');
+Route::get('/intake',        [PageController::class, 'intake'])->name('intake');
+Route::get('/onboarding',    [PageController::class, 'onboarding'])->name('onboarding');
 
 /*
 |--------------------------------------------------------------------------
@@ -85,5 +91,5 @@ Route::prefix('admin')->group(function () {
 |--------------------------------------------------------------------------
 */
 Route::get('/{slug}', [PageController::class, 'show'])
-    ->where('slug', '^(?!admin|funding|intake|onboarding|_debugbar)[a-z0-9\-]+$')
+    ->where('slug', '^(?!admin|funding|services|pricing|mentorship|business-setup|faq|community|intake|onboarding|_debugbar)[a-z0-9\-]+$')
     ->name('pages.show');
