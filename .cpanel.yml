@@ -1,0 +1,33 @@
+---
+deployment:
+  tasks:
+    # 1. Deploy files to web root
+    - export DEPLOYPATH=/home/$(whoami)/public_html
+    - /bin/cp -r . $DEPLOYPATH
+
+    # 2. Install PHP dependencies (production, no dev packages)
+    - export COMPOSER_HOME=/home/$(whoami)/.composer
+    - /usr/local/bin/php /usr/local/bin/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --working-dir=$DEPLOYPATH
+
+    # 3. Set up storage symlink (idempotent — safe to run multiple times)
+    - /usr/local/bin/php $DEPLOYPATH/artisan storage:link --force
+
+    # 4. Run any new database migrations safely
+    - /usr/local/bin/php $DEPLOYPATH/artisan migrate --force --no-interaction
+
+    # 5. Run seeders for new tables (firstOrCreate guards prevent data loss)
+    - /usr/local/bin/php $DEPLOYPATH/artisan db:seed --class=NavItemSeeder --force --no-interaction
+
+    # 6. Clear all caches so changes apply immediately
+    - /usr/local/bin/php $DEPLOYPATH/artisan config:clear
+    - /usr/local/bin/php $DEPLOYPATH/artisan route:clear
+    - /usr/local/bin/php $DEPLOYPATH/artisan view:clear
+    - /usr/local/bin/php $DEPLOYPATH/artisan cache:clear
+
+    # 7. Re-cache config and routes for performance
+    - /usr/local/bin/php $DEPLOYPATH/artisan config:cache
+    - /usr/local/bin/php $DEPLOYPATH/artisan route:cache
+
+    # 8. Set correct file permissions
+    - chmod -R 755 $DEPLOYPATH/storage
+    - chmod -R 755 $DEPLOYPATH/bootstrap/cache
