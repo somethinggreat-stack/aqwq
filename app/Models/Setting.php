@@ -16,24 +16,32 @@ class Setting extends Model
      * shown in the sidebar.
      */
     public const GROUPS = [
-        'branding'       => 'Branding & Identity',
-        'contact'        => 'Contact & Support',
-        'home_hero'      => 'Home · Hero',
-        'home_content'   => 'Home · Founder',
-        'home_services'  => 'Home · Services',
-        'home_mentorship'=> 'Home · Mentorship',
-        'home_business'  => 'Home · Business Setup',
-        'pricing'        => 'Home · Pricing',
-        'home_reviews'   => 'Home · Reviews',
-        'home_faq'       => 'Home · FAQ',
-        'home_extra'     => 'Home · Other Sections',
-        'media'          => 'Photos & Videos',
-        'links'          => 'Links & Checkout',
-        'footer'         => 'Footer',
-        'funding'        => 'Funding Page',
-        'intake'         => 'Intake Page',
-        'onboarding'     => 'Onboarding Page',
-        'theme'          => 'Theme & Colors',
+        // Global
+        'branding'            => 'Branding & Identity',
+        'contact'             => 'Contact & Support',
+        'links'               => 'Links & Checkout',
+        'media'               => 'Photos & Videos',
+        'theme'               => 'Theme & Colors',
+        'footer'              => 'Footer',
+        // Home page
+        'home_hero'           => 'Home · Hero',
+        'home_content'        => 'Home · Founder',
+        'home_services'       => 'Home · Services',
+        'home_mentorship'     => 'Home · Mentorship',
+        'home_business'       => 'Home · Business Setup',
+        'pricing'             => 'Home · Pricing',
+        'home_reviews'        => 'Home · Reviews',
+        'home_faq'            => 'Home · FAQ',
+        'home_extra'          => 'Home · Other Sections',
+        // Standalone pages
+        'services_page'       => 'Services Page',
+        'pricing_page'        => 'Pricing Page',
+        'mentorship_page'     => 'Mentorship Page',
+        'business_setup_page' => 'Business Setup Page',
+        'faq_page'            => 'FAQ Page',
+        'funding'             => 'Funding Page',
+        'intake'              => 'Intake Page',
+        'onboarding'          => 'Onboarding Page',
     ];
 
     protected static function booted(): void

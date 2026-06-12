@@ -46,8 +46,8 @@
 </head>
 <body class="font-sans bg-royal-50/40 text-royal-900 antialiased min-h-screen" x-data>
   <div class="flex min-h-screen">
-    {{-- Sidebar --}}
-    <aside class="w-64 shrink-0 bg-royal-900 text-royal-100 flex flex-col overflow-y-auto">
+    {{-- Sidebar — sticky, independent scroll --}}
+    <aside class="w-64 shrink-0 bg-royal-900 text-royal-100 flex flex-col sticky top-0 h-screen overflow-y-auto">
       <div class="px-5 py-5 border-b border-white/10 shrink-0">
         <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-2">
           <span class="text-lg font-bold text-white">{{ config('app.name') }}</span>
@@ -55,48 +55,87 @@
         <p class="text-xs text-royal-300 mt-1">Owner Control Panel</p>
       </div>
 
-      <nav class="flex-1 py-4 px-3 space-y-1 text-sm">
+      <nav class="flex-1 py-4 px-3 text-sm">
+        @php
+          $active = fn(string $key) => request()->routeIs('admin.settings.edit') && request()->route('group') === $key
+            ? 'bg-gold-500 text-royal-950 font-semibold'
+            : 'hover:bg-white/10';
+          $navClass = fn(string $route) => request()->routeIs($route)
+            ? 'bg-gold-500 text-royal-950 font-semibold'
+            : 'hover:bg-white/10';
+        @endphp
+
         <a href="{{ route('admin.dashboard') }}"
-           class="flex items-center gap-2 px-3 py-2 rounded-lg {{ request()->routeIs('admin.dashboard') ? 'bg-gold-500 text-royal-950 font-semibold' : 'hover:bg-white/10' }}">
+           class="flex items-center gap-2 px-3 py-2 rounded-lg mb-1 {{ request()->routeIs('admin.dashboard') ? 'bg-gold-500 text-royal-950 font-semibold' : 'hover:bg-white/10' }}">
           <span class="text-base leading-none">◉</span> Dashboard
         </a>
 
         {{-- ── Website Builder ── --}}
-        <p class="px-3 pt-4 pb-1 text-[11px] uppercase tracking-wider text-royal-400">Website Builder</p>
-
-        <a href="{{ route('admin.visual-editor') }}"
-           class="flex items-center gap-2 px-3 py-2 rounded-lg {{ request()->routeIs('admin.visual-editor*') ? 'bg-gold-500 text-royal-950 font-semibold' : 'hover:bg-white/10' }}">
-          <span>🎨</span> Visual Editor
-        </a>
-
-        <a href="{{ route('admin.navigation.index') }}"
-           class="flex items-center gap-2 px-3 py-2 rounded-lg {{ request()->routeIs('admin.navigation.*') ? 'bg-gold-500 text-royal-950 font-semibold' : 'hover:bg-white/10' }}">
-          <span>☰</span> Navigation Menu
-        </a>
-
-        <a href="{{ route('admin.pages.index') }}"
-           class="flex items-center gap-2 px-3 py-2 rounded-lg {{ request()->routeIs('admin.pages.*') ? 'bg-gold-500 text-royal-950 font-semibold' : 'hover:bg-white/10' }}">
-          <span>📄</span> Pages
-        </a>
-
-        {{-- ── Edit Content ── --}}
-        <p class="px-3 pt-4 pb-1 text-[11px] uppercase tracking-wider text-royal-400">Edit Content</p>
-        @foreach (\App\Models\Setting::GROUPS as $key => $label)
-          <a href="{{ route('admin.settings.edit', $key) }}"
-             class="block px-3 py-2 rounded-lg {{ request()->routeIs('admin.settings.edit') && request()->route('group') === $key ? 'bg-gold-500 text-royal-950 font-semibold' : 'hover:bg-white/10' }}">
-            {{ $label }}
+        <p class="px-3 pt-4 pb-1 text-[10px] uppercase tracking-wider text-royal-400 font-semibold">Website Builder</p>
+        <div class="space-y-0.5">
+          <a href="{{ route('admin.visual-editor') }}"
+             class="flex items-center gap-2 px-3 py-2 rounded-lg {{ $navClass('admin.visual-editor*') }}">
+            <span>🎨</span> Visual Editor
           </a>
-        @endforeach
+          <a href="{{ route('admin.navigation.index') }}"
+             class="flex items-center gap-2 px-3 py-2 rounded-lg {{ $navClass('admin.navigation.*') }}">
+            <span>☰</span> Navigation Menu
+          </a>
+          <a href="{{ route('admin.pages.index') }}"
+             class="flex items-center gap-2 px-3 py-2 rounded-lg {{ $navClass('admin.pages.*') }}">
+            <span>📄</span> Pages
+          </a>
+        </div>
+
+        {{-- ── Global Settings ── --}}
+        <p class="px-3 pt-5 pb-1 text-[10px] uppercase tracking-wider text-royal-400 font-semibold">Global</p>
+        <div class="space-y-0.5">
+          <a href="{{ route('admin.settings.edit', 'branding') }}"   class="block px-3 py-2 rounded-lg {{ $active('branding') }}">Branding &amp; Identity</a>
+          <a href="{{ route('admin.settings.edit', 'contact') }}"    class="block px-3 py-2 rounded-lg {{ $active('contact') }}">Contact &amp; Support</a>
+          <a href="{{ route('admin.settings.edit', 'links') }}"      class="block px-3 py-2 rounded-lg {{ $active('links') }}">Links &amp; Checkout</a>
+          <a href="{{ route('admin.settings.edit', 'media') }}"      class="block px-3 py-2 rounded-lg {{ $active('media') }}">Photos &amp; Videos</a>
+          <a href="{{ route('admin.settings.edit', 'footer') }}"     class="block px-3 py-2 rounded-lg {{ $active('footer') }}">Footer</a>
+          <a href="{{ route('admin.settings.edit', 'theme') }}"      class="block px-3 py-2 rounded-lg {{ $active('theme') }}">Theme &amp; Colors</a>
+        </div>
+
+        {{-- ── Home Page ── --}}
+        <p class="px-3 pt-5 pb-1 text-[10px] uppercase tracking-wider text-royal-400 font-semibold">Home Page</p>
+        <div class="space-y-0.5">
+          <a href="{{ route('admin.settings.edit', 'home_hero') }}"       class="block px-3 py-2 rounded-lg {{ $active('home_hero') }}">Hero</a>
+          <a href="{{ route('admin.settings.edit', 'home_content') }}"    class="block px-3 py-2 rounded-lg {{ $active('home_content') }}">Founder</a>
+          <a href="{{ route('admin.settings.edit', 'home_services') }}"   class="block px-3 py-2 rounded-lg {{ $active('home_services') }}">Services</a>
+          <a href="{{ route('admin.settings.edit', 'home_mentorship') }}" class="block px-3 py-2 rounded-lg {{ $active('home_mentorship') }}">Mentorship</a>
+          <a href="{{ route('admin.settings.edit', 'home_business') }}"   class="block px-3 py-2 rounded-lg {{ $active('home_business') }}">Business Setup</a>
+          <a href="{{ route('admin.settings.edit', 'pricing') }}"         class="block px-3 py-2 rounded-lg {{ $active('pricing') }}">Pricing</a>
+          <a href="{{ route('admin.settings.edit', 'home_reviews') }}"    class="block px-3 py-2 rounded-lg {{ $active('home_reviews') }}">Reviews</a>
+          <a href="{{ route('admin.settings.edit', 'home_faq') }}"        class="block px-3 py-2 rounded-lg {{ $active('home_faq') }}">FAQ</a>
+          <a href="{{ route('admin.settings.edit', 'home_extra') }}"      class="block px-3 py-2 rounded-lg {{ $active('home_extra') }}">Other Sections</a>
+        </div>
+
+        {{-- ── Standalone Pages ── --}}
+        <p class="px-3 pt-5 pb-1 text-[10px] uppercase tracking-wider text-royal-400 font-semibold">Standalone Pages</p>
+        <div class="space-y-0.5">
+          <a href="{{ route('admin.settings.edit', 'services_page') }}"       class="block px-3 py-2 rounded-lg {{ $active('services_page') }}">Services Page</a>
+          <a href="{{ route('admin.settings.edit', 'pricing_page') }}"        class="block px-3 py-2 rounded-lg {{ $active('pricing_page') }}">Pricing Page</a>
+          <a href="{{ route('admin.settings.edit', 'mentorship_page') }}"     class="block px-3 py-2 rounded-lg {{ $active('mentorship_page') }}">Mentorship Page</a>
+          <a href="{{ route('admin.settings.edit', 'business_setup_page') }}" class="block px-3 py-2 rounded-lg {{ $active('business_setup_page') }}">Business Setup Page</a>
+          <a href="{{ route('admin.settings.edit', 'faq_page') }}"            class="block px-3 py-2 rounded-lg {{ $active('faq_page') }}">FAQ Page</a>
+          <a href="{{ route('admin.settings.edit', 'funding') }}"             class="block px-3 py-2 rounded-lg {{ $active('funding') }}">Funding Page</a>
+          <a href="{{ route('admin.settings.edit', 'intake') }}"              class="block px-3 py-2 rounded-lg {{ $active('intake') }}">Intake Page</a>
+          <a href="{{ route('admin.settings.edit', 'onboarding') }}"          class="block px-3 py-2 rounded-lg {{ $active('onboarding') }}">Onboarding Page</a>
+        </div>
 
         {{-- ── Library ── --}}
-        <p class="px-3 pt-4 pb-1 text-[11px] uppercase tracking-wider text-royal-400">Library</p>
-        <a href="{{ route('admin.media.index') }}"
-           class="flex items-center gap-2 px-3 py-2 rounded-lg {{ request()->routeIs('admin.media.*') ? 'bg-gold-500 text-royal-950 font-semibold' : 'hover:bg-white/10' }}">
-          <span>🖼</span> Media Library
-        </a>
+        <p class="px-3 pt-5 pb-1 text-[10px] uppercase tracking-wider text-royal-400 font-semibold">Library</p>
+        <div class="space-y-0.5">
+          <a href="{{ route('admin.media.index') }}"
+             class="flex items-center gap-2 px-3 py-2 rounded-lg {{ $navClass('admin.media.*') }}">
+            <span>🖼</span> Media Library
+          </a>
+        </div>
       </nav>
 
-      <div class="px-3 py-4 border-t border-white/10 space-y-2 shrink-0">
+      <div class="px-3 py-4 border-t border-white/10 space-y-1 shrink-0">
         <a href="{{ url('/') }}" target="_blank" class="block px-3 py-2 rounded-lg text-sm hover:bg-white/10">↗ View website</a>
         <form method="POST" action="{{ route('admin.logout') }}">
           @csrf
