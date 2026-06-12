@@ -73,10 +73,6 @@
             Results typically visible in 30–90 days
           </li>
         </ul>
-        <a href="/pricing" class="inline-flex items-center gap-2 text-sm font-semibold text-gold-600 hover:text-gold-500 transition group-hover:gap-3">
-          See Credit Repair Packages
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-        </a>
       </div>
 
       {{-- 02 Rebuilding Credit --}}
@@ -101,10 +97,6 @@
             Credit mix coaching for sustained growth
           </li>
         </ul>
-        <a href="/pricing" class="inline-flex items-center gap-2 text-sm font-semibold text-gold-600 hover:text-gold-500 transition group-hover:gap-3">
-          View Packages
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-        </a>
       </div>
 
       {{-- 03 Business Structure --}}
@@ -129,10 +121,6 @@
             Professional business address + banking
           </li>
         </ul>
-        <a href="/business-setup" class="inline-flex items-center gap-2 text-sm font-semibold text-gold-600 hover:text-gold-500 transition group-hover:gap-3">
-          See Business Setup Program
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-        </a>
       </div>
 
       {{-- 04 Business Credit --}}
@@ -157,10 +145,6 @@
             Path to unsecured business lines
           </li>
         </ul>
-        <a href="/business-setup" class="inline-flex items-center gap-2 text-sm font-semibold text-gold-600 hover:text-gold-500 transition group-hover:gap-3">
-          Learn About Business Setup
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-        </a>
       </div>
 
       {{-- 05 Personal & Business Funding --}}
@@ -185,10 +169,6 @@
             Pre-qualify in under 5 minutes, soft pull
           </li>
         </ul>
-        <a href="{{ route('funding') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-gold-600 hover:text-gold-500 transition group-hover:gap-3">
-          Apply for Funding
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-        </a>
       </div>
 
       {{-- 06 Wealth University --}}
@@ -213,10 +193,6 @@
             AQ Wealth private network access
           </li>
         </ul>
-        <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-gold-600 hover:text-gold-500 transition group-hover:gap-3">
-          Join the Community
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-        </a>
       </div>
 
     </div>
@@ -299,7 +275,7 @@
       @endforeach
     </div>
     <div class="mt-14 text-center">
-      <a href="{{ route('home') }}#contact" class="btn-gold text-base">Start My Free Review →</a>
+      <a href="#" data-open-credit-modal class="btn-gold text-base">Start My Free Review →</a>
     </div>
   </div>
 </section>

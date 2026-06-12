@@ -133,7 +133,7 @@
         <h3 class="font-display text-2xl sm:text-3xl font-bold mt-2 mb-4">Talk to a real advisor.</h3>
         <p class="text-royal-100/65 mb-7 leading-relaxed">Schedule a free credit review. We'll look at your specific situation and tell you exactly what the right next step is — no pressure, no sales pitch.</p>
         <div class="flex justify-center">
-          <a href="{{ route('home') }}#contact" class="btn-gold text-base">Book My Free Review →</a>
+          <a href="#" data-open-credit-modal class="btn-gold text-base">Book My Free Review →</a>
         </div>
       </div>
     </div>

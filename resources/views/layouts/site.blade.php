@@ -91,4 +91,36 @@
       </form>
     </div>
   </div>
+
+  {{-- Modal controller (no auto-open — home.js handles that on the home page) --}}
+  <script>
+    (function () {
+      var modal = document.getElementById('creditModal');
+      if (!modal) return;
+
+      function openModal() {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+      }
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+      }
+
+      window.openCreditModal  = openModal;
+      window.closeCreditModal = closeModal;
+
+      document.getElementById('creditModalClose')?.addEventListener('click', closeModal);
+      document.getElementById('creditModalSuccessClose')?.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+      document.addEventListener('click', function (e) {
+        var el = e.target.closest('[data-open-credit-modal]');
+        if (el) { e.preventDefault(); openModal(); }
+      });
+    })();
+  </script>
 @endsection

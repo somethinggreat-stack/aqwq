@@ -32,7 +32,7 @@
           <li><a href="/faq" class="text-royal-300/80 hover:text-white transition">FAQ</a></li>
           <li><a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="text-royal-300/80 hover:text-white transition">Community</a></li>
           <li><a href="{{ route('funding') }}" class="text-royal-300/80 hover:text-white transition">Apply for Funding</a></li>
-          <li><a href="{{ route('home') }}#contact" class="text-royal-300/80 hover:text-white transition">Free Credit Review</a></li>
+          <li><a href="#" data-open-credit-modal class="text-royal-300/80 hover:text-white transition">Free Credit Review</a></li>
         </ul>
       </div>
 
@@ -49,7 +49,7 @@
           </li>
         </ul>
         <div class="mt-5">
-          <a href="{{ route('home') }}#contact" class="btn-outline text-xs py-2 px-4">Free Credit Review →</a>
+          <a href="#" data-open-credit-modal class="btn-outline text-xs py-2 px-4">Free Credit Review →</a>
         </div>
       </div>
 
