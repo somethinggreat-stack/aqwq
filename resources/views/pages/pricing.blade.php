@@ -6,7 +6,7 @@
 @section('page-content')
 
 {{-- ============ NAV SPACER + BNPL STRIPE ============ --}}
-<div style="padding-top:5rem;">{{-- clears fixed nav (h-20 = 5rem) --}}
+<div style="padding-top:7.5rem;">{{-- clears fixed nav: 38px idle offset + 80px height --}}
   <div class="bg-white border-b border-royal-100 py-4">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
