@@ -5,45 +5,12 @@
 
 @section('page-content')
 
-{{-- ============ HERO ============ --}}
-<section class="relative overflow-hidden pt-40 pb-20 lg:pt-48 lg:pb-28 hero-bg text-white">
-  <div class="hero-grid"></div>
-  <div class="hero-orb orb-gold"></div>
-  <div class="hero-orb orb-purple"></div>
-  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/15 ring-1 ring-gold-400/40 text-gold-200 text-xs tracking-widest uppercase mb-6">
-      <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
-      Transparent Pricing
-    </div>
-    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight max-w-3xl mx-auto">
-      Honest Pricing.<br/><span class="gold-text">Real Results.</span>
-    </h1>
-    <p class="mt-6 text-lg sm:text-xl text-royal-100/85 max-w-2xl mx-auto leading-relaxed">
-      No hidden fees. No long-term contracts. Pick the package that fits where you are right now — and upgrade anytime as your credit grows.
-    </p>
-    <div class="mt-8 flex flex-wrap justify-center items-center gap-6 text-sm text-royal-100/70">
-      <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-gold-300" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
-        One-time investment, no monthly fees
-      </div>
-      <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-gold-300" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
-        Single &amp; Duo packages available
-      </div>
-      <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-gold-300" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
-        Pay over time available
-      </div>
-    </div>
-  </div>
-</section>
-
 {{-- ============ BNPL STRIPE ============ --}}
-<section class="bg-white border-b border-royal-100 py-5">
+<div class="bg-royal-900 border-b border-royal-700 py-4" style="padding-top: calc(5rem + 1rem);">
   <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
-      <div class="flex items-center gap-2 text-royal-700">
-        <svg class="w-5 h-5 text-gold-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20"/><path d="M6 16h4"/></svg>
+      <div class="flex items-center gap-2 text-royal-100">
+        <svg class="w-5 h-5 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20"/><path d="M6 16h4"/></svg>
         <span class="text-sm font-semibold">Pay Over Time &mdash; 4 interest-free payments</span>
       </div>
       <div class="flex flex-wrap items-center justify-center gap-2">
@@ -51,49 +18,13 @@
         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide" style="background:#b2fce4; color:#000;">Afterpay</span>
         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide" style="background:#1a0633; color:#fff;">Zip</span>
       </div>
-      <span class="text-xs text-royal-700/50 hidden sm:inline">available at checkout</span>
+      <span class="text-xs text-royal-300/60 hidden sm:inline">available at checkout</span>
     </div>
   </div>
-</section>
-
-{{-- ============ COMMUNITY CARD ============ --}}
-<section class="py-16 lg:py-20 bg-gradient-to-b from-royal-50 to-white">
-  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-    <div class="max-w-2xl mx-auto text-center mb-10" data-reveal>
-      <div class="eyebrow justify-center">Monthly Community</div>
-      <h2 class="section-title">Start with the community.</h2>
-      <p class="section-sub mx-auto">The most affordable way to get into AQ Wealth University — and the foundation for everything else.</p>
-    </div>
-    <div class="relative overflow-hidden rounded-3xl bg-royal-900 text-white p-8 sm:p-12 ring-1 ring-gold-400/40 shadow-2xl" data-reveal>
-      <div class="absolute -top-20 -right-20 w-72 h-72 bg-gold-500/20 rounded-full" style="filter:blur(60px)"></div>
-      <div class="absolute -bottom-32 -left-20 w-72 h-72 bg-royal-600/30 rounded-full" style="filter:blur(60px)"></div>
-      <div class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
-        <div class="flex-1">
-          <div class="text-xs uppercase tracking-widest text-gold-300 mb-3">Skool Community Access</div>
-          <h3 class="font-display text-2xl sm:text-4xl font-bold mb-3">AQ Wealth Community</h3>
-          <p class="text-royal-100/80 max-w-lg leading-relaxed mb-5">Weekly live trainings, full course replays, proven frameworks, and direct access to the AQ Wealth network. Month to month — cancel anytime.</p>
-          <ul class="grid sm:grid-cols-2 gap-2 text-sm">
-            @foreach(['Weekly live training calls', 'Full course library & replays', 'Dispute templates & frameworks', 'Private community access', 'Credit-building roadmaps', 'Direct Q&A with advisors'] as $f)
-            <li class="flex items-center gap-2 text-royal-200/80">
-              <svg class="w-4 h-4 text-gold-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
-              {{ $f }}
-            </li>
-            @endforeach
-          </ul>
-        </div>
-        <div class="text-center sm:text-right flex-shrink-0">
-          <div class="text-xs uppercase tracking-widest text-gold-300 mb-1">Starting at</div>
-          <div class="font-display text-6xl font-bold gold-text leading-none">$97</div>
-          <div class="text-royal-200/70 text-sm mt-1">/month · no contract</div>
-          <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="mt-6 inline-flex btn-gold text-base">Join the Community →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
 {{-- ============ CREDIT REPAIR PACKAGES ============ --}}
-<section class="py-20 lg:py-28 bg-white" id="packages">
+<section class="py-16 lg:py-24 bg-white" id="packages">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="max-w-2xl mx-auto text-center mb-14" data-reveal>
       <div class="eyebrow justify-center">Credit Repair Packages</div>
@@ -148,7 +79,7 @@
           @if(config('site.links.checkout_standard'))
             <a href="{{ config('site.links.checkout_standard') }}" target="_blank" rel="noopener" class="btn-outline w-full">Get Started →</a>
           @else
-            <a href="{{ route('home') }}#contact" class="btn-outline w-full">Get Started →</a>
+            <a href="#" data-open-credit-modal class="btn-outline w-full">Get Started →</a>
           @endif
         </div>
       </div>
@@ -205,7 +136,7 @@
           @if(config('site.links.checkout_expedited'))
             <a href="{{ config('site.links.checkout_expedited') }}" target="_blank" rel="noopener" class="btn-gold w-full">Choose Expedited</a>
           @else
-            <a href="{{ route('home') }}#contact" class="btn-gold w-full">Choose Expedited</a>
+            <a href="#" data-open-credit-modal class="btn-gold w-full">Choose Expedited</a>
           @endif
         </div>
       </div>
@@ -255,7 +186,7 @@
           @if(config('site.links.checkout_premium'))
             <a href="{{ config('site.links.checkout_premium') }}" target="_blank" rel="noopener" class="btn-outline w-full">Go Premium →</a>
           @else
-            <a href="{{ route('home') }}#contact" class="btn-outline w-full">Go Premium →</a>
+            <a href="#" data-open-credit-modal class="btn-outline w-full">Go Premium →</a>
           @endif
         </div>
       </div>
@@ -288,6 +219,36 @@
         <p>{{ $faq['a'] }}</p>
       </details>
       @endforeach
+    </div>
+  </div>
+</section>
+
+{{-- ============ COMMUNITY CARD ============ --}}
+<section class="py-16 lg:py-20 bg-gradient-to-b from-white to-royal-50">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="relative overflow-hidden rounded-3xl bg-royal-900 text-white p-8 sm:p-12 ring-1 ring-gold-400/40 shadow-2xl" data-reveal>
+      <div class="absolute -top-20 -right-20 w-72 h-72 bg-gold-500/20 rounded-full" style="filter:blur(60px)"></div>
+      <div class="absolute -bottom-32 -left-20 w-72 h-72 bg-royal-600/30 rounded-full" style="filter:blur(60px)"></div>
+      <div class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-widest text-gold-300 mb-3">Not Ready for a Package?</div>
+          <h3 class="font-display text-2xl sm:text-3xl font-bold mb-3">Join the Community First</h3>
+          <p class="text-royal-100/80 max-w-lg leading-relaxed mb-5">Get access to weekly live trainings, full course replays, dispute templates, and the AQ Wealth network. Learn at your own pace. Month to month — cancel anytime.</p>
+          <ul class="grid sm:grid-cols-2 gap-2 text-sm">
+            @foreach(['Weekly live training calls', 'Full course library & replays', 'Dispute templates & frameworks', 'Private community access', 'Credit-building roadmaps', 'Direct Q&A with advisors'] as $f)
+            <li class="flex items-center gap-2 text-royal-200/80">
+              <svg class="w-4 h-4 text-gold-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+              {{ $f }}
+            </li>
+            @endforeach
+          </ul>
+        </div>
+        <div class="text-center sm:text-right flex-shrink-0">
+          <div class="font-display text-6xl font-bold gold-text leading-none">$97</div>
+          <div class="text-royal-200/70 text-sm mt-1">/month · no contract</div>
+          <a href="{{ config('site.links.skool', '#') }}" target="_blank" rel="noopener" class="mt-6 inline-flex btn-gold text-base">Join the Community →</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
