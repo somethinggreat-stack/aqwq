@@ -10,7 +10,7 @@
           From knowledge to wisdom.<br/>From wisdom to wealth.
         </p>
         <div class="mt-5 flex gap-3">
-          <a href="{{ route('community') }}" class="btn-gold text-xs py-2 px-4">Join Community →</a>
+          <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="btn-gold text-xs py-2 px-4">Join Community →</a>
         </div>
       </div>
 
@@ -30,7 +30,7 @@
         <ul class="space-y-2.5 text-sm">
           <li><a href="/pricing" class="text-royal-300/80 hover:text-white transition">Pricing</a></li>
           <li><a href="/faq" class="text-royal-300/80 hover:text-white transition">FAQ</a></li>
-          <li><a href="/community" class="text-royal-300/80 hover:text-white transition">Community</a></li>
+          <li><a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="text-royal-300/80 hover:text-white transition">Community</a></li>
           <li><a href="{{ route('funding') }}" class="text-royal-300/80 hover:text-white transition">Apply for Funding</a></li>
           <li><a href="{{ route('home') }}#contact" class="text-royal-300/80 hover:text-white transition">Free Credit Review</a></li>
         </ul>
@@ -61,7 +61,7 @@
         <a href="/services" class="hover:text-royal-300 transition">Services</a>
         <a href="/pricing" class="hover:text-royal-300 transition">Pricing</a>
         <a href="/faq" class="hover:text-royal-300 transition">FAQ</a>
-        <a href="/community" class="hover:text-royal-300 transition">Community</a>
+        <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="hover:text-royal-300 transition">Community</a>
       </div>
     </div>
   </div>

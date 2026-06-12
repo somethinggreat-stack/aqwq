@@ -32,7 +32,7 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="{{ route('community') }}" class="hidden sm:inline-flex btn-gold text-sm">Join the Community</a>
+        <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="hidden sm:inline-flex btn-gold text-sm">Join the Community</a>
         <button id="menuBtn" class="lg:hidden p-2" aria-label="Open menu">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 6h16M4 12h16M4 18h16"/>
@@ -57,7 +57,7 @@
         <a href="/funding"        class="py-2">Funding</a>
         <a href="/faq"            class="py-2">FAQ</a>
       @endif
-      <a href="{{ route('community') }}" class="btn-gold mt-2 text-center">Join the Community</a>
+      <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="btn-gold mt-2 text-center">Join the Community</a>
     </nav>
   </div>
 </header>

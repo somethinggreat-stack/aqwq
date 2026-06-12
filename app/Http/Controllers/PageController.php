@@ -43,11 +43,6 @@ class PageController extends Controller
         return view('pages.faq');
     }
 
-    public function community()
-    {
-        return view('pages.community');
-    }
-
     public function intake(Request $request)
     {
         return view('pages.intake', [

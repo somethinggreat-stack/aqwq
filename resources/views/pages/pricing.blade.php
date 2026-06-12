@@ -85,8 +85,7 @@
           <div class="text-xs uppercase tracking-widest text-gold-300 mb-1">Starting at</div>
           <div class="font-display text-6xl font-bold gold-text leading-none">$97</div>
           <div class="text-royal-200/70 text-sm mt-1">/month · no contract</div>
-          <a href="/community" class="mt-6 inline-flex btn-gold text-base">See Your Options →</a>
-          <div class="mt-3 text-xs text-royal-300/50">Two membership tiers available</div>
+          <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="mt-6 inline-flex btn-gold text-base">Join the Community →</a>
         </div>
       </div>
     </div>

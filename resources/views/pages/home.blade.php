@@ -171,13 +171,13 @@
           <p>{{ cms('home.services.card5_desc', 'Personal lines, business lines of credit, and capital placement, stacked the smart way.') }}</p>
           <a href="{{ route('funding') }}" class="service-arrow" aria-label="Learn more about Funding"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </div>
-        <div class="service-card" data-reveal data-delay="3" style="cursor:pointer;" onclick="window.location.href='/community'">
+        <div class="service-card" data-reveal data-delay="3" style="cursor:pointer;" onclick="window.open('{{ config('site.links.skool', '#contact') }}','_blank')">
           <div class="service-aurora"></div>
           <span class="service-num">06</span>
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
           <h3>{{ cms('home.services.card6_title', 'Wealth University') }}</h3>
           <p>{{ cms('home.services.card6_desc', 'Live trainings, replays, frameworks, and a community of people moving in the same direction as you.') }}</p>
-          <a href="/community" class="service-arrow" aria-label="Learn more about Wealth University"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="service-arrow" aria-label="Learn more about Wealth University"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </div>
       </div>
     </div>
@@ -523,7 +523,7 @@
             </div>
             <div class="text-right">
               <div class="font-display text-5xl font-bold gold-text leading-none">{!! cms('home.extra.community_price', '$99<span class="text-lg align-top ml-1 text-gold-200">/mo</span>') !!}</div>
-              <a href="{{ route('community') }}" class="mt-4 inline-flex btn-gold">{{ cms('home.hero.cta_community', 'Join the Community') }}</a>
+              <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="mt-4 inline-flex btn-gold">{{ cms('home.hero.cta_community', 'Join the Community') }}</a>
             </div>
           </div>
         </div>

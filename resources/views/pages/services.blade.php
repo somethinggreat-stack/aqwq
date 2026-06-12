@@ -214,7 +214,7 @@
             AQ Wealth private network access
           </li>
         </ul>
-        <a href="/community" class="inline-flex items-center gap-2 text-sm font-semibold text-gold-600 hover:text-gold-500 transition group-hover:gap-3">
+        <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-gold-600 hover:text-gold-500 transition group-hover:gap-3">
           Join the Community
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </a>

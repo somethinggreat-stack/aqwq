@@ -64,7 +64,7 @@
       <div class="space-y-3">
         <details class="faq">
           <summary>What's included in the Community ($97/month)?</summary>
-          <p>Weekly live trainings, full course replays, proven frameworks, dispute templates, and direct access to the AQ Wealth private network. It's the most affordable way to stay sharp and keep learning every month. Month to month — cancel anytime. <a href="/community" class="text-gold-600 font-semibold hover:underline">See community details →</a></p>
+          <p>Weekly live trainings, full course replays, proven frameworks, dispute templates, and direct access to the AQ Wealth private network. It's the most affordable way to stay sharp and keep learning every month. Month to month — cancel anytime. <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="text-gold-600 font-semibold hover:underline">Join the Community →</a></p>
         </details>
         <details class="faq">
           <summary>Is there a monthly payment option for the credit repair packages?</summary>
