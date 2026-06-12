@@ -536,7 +536,7 @@
   </section>
 
   <!-- ============== PRICING ============== -->
-  <section id="pricing" class="py-24 lg:py-32 bg-gradient-to-b from-royal-50 via-white to-royal-50">
+  <section class="py-24 lg:py-32 bg-gradient-to-b from-royal-50 via-white to-royal-50">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center" data-reveal>
         <div class="eyebrow justify-center">{{ cms('home.extra.pricing_eyebrow', 'Pricing') }}</div>
@@ -579,7 +579,7 @@
         </div>
       </div>
 
-      <div class="mt-20 text-center max-w-2xl mx-auto" data-reveal>
+      <div id="pricing" class="mt-20 text-center max-w-2xl mx-auto" data-reveal>
         <h3 class="font-display text-3xl font-bold text-royal-900">{{ cms('home.extra.packages_heading', 'Credit Repair Packages') }}</h3>
         <p class="mt-3 text-royal-700/80">{!! cms('home.extra.packages_sub', 'Every package shows two prices: a <strong>Single</strong> price for just you, and a discounted <strong>Duo</strong> price when you bring a partner along. Both are visible on every card so you always know what you\'re paying.') !!}</p>
       </div>
