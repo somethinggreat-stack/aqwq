@@ -21,9 +21,8 @@
     <p class="mt-6 text-lg sm:text-xl text-royal-100/85 max-w-2xl mx-auto leading-relaxed">
       Whether you're cleaning up credit, building business credit, or trying to get funded for the first time — you get the structure, the teaching, and the work done with you so you can move forward with confidence.
     </p>
-    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+    <div class="mt-8 flex justify-center">
       <a href="/pricing" class="btn-gold text-base">See Pricing &amp; Packages →</a>
-      <a href="{{ route('home') }}#contact" class="btn-ghost text-base">Get Free Credit Review</a>
     </div>
     <div class="mt-10 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-sm text-royal-100/70">
       <div class="flex items-center gap-2">
@@ -248,10 +247,6 @@
             <div class="text-xs text-royal-300/70 mt-1">Avg. Timeline</div>
           </div>
         </div>
-        <div class="mt-8 flex flex-col sm:flex-row gap-3">
-          <a href="/pricing" class="btn-gold">See Pricing &amp; Packages →</a>
-          <a href="{{ route('home') }}#contact" class="btn-ghost">Get Free Review</a>
-        </div>
       </div>
       <div class="space-y-4" data-reveal data-delay="2">
         @php
@@ -319,9 +314,8 @@
     <div class="eyebrow justify-center" style="color:var(--gold-300)">Ready to Start</div>
     <h2 class="font-display text-3xl sm:text-4xl font-bold leading-tight mb-4">Pick your service. Take the first step.</h2>
     <p class="text-royal-100/65 mb-8 leading-relaxed">Schedule a free credit review today. We'll tell you exactly what's dragging your score down and build a plan around your specific situation.</p>
-    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+    <div class="flex justify-center">
       <a href="/pricing" class="btn-gold text-base">See All Pricing →</a>
-      <a href="{{ route('home') }}#contact" class="btn-ghost text-base">Book Free Review</a>
     </div>
   </div>
 </section>

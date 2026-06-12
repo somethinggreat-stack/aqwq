@@ -289,10 +289,6 @@
       </details>
       @endforeach
     </div>
-    <div class="mt-12 text-center">
-      <p class="text-royal-700/65 mb-4">Still have questions? Get a free strategy call.</p>
-      <a href="{{ route('home') }}#contact" class="btn-gold">Book My Free Review →</a>
-    </div>
   </div>
 </section>
 

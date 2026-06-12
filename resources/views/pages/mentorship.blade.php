@@ -20,9 +20,8 @@
     <p class="mt-6 text-lg sm:text-xl text-royal-100/80 max-w-2xl mx-auto leading-relaxed">
       Get into private mentorship with our team. Learn how to repair credit and structure businesses for yourself, for your family, or as a service you charge real money for.
     </p>
-    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+    <div class="mt-8 flex justify-center">
       <a href="#apply" class="btn-gold text-base">Apply for Mentorship →</a>
-      <a href="{{ route('home') }}#contact" class="btn-ghost text-base">Ask Us a Question</a>
     </div>
     <div class="mt-10 grid grid-cols-3 gap-4 max-w-sm mx-auto text-center">
       <div>
@@ -138,9 +137,6 @@
           </div>
           @endforeach
         </div>
-        <div class="mt-8">
-          <a href="{{ route('home') }}#contact" class="btn-gold">Schedule a Strategy Call →</a>
-        </div>
       </div>
       <div data-reveal data-delay="2">
         <div class="rounded-3xl bg-royal-900 text-white p-8 sm:p-10 relative overflow-hidden">
@@ -188,10 +184,6 @@
           <div class="text-xs text-gold-600 uppercase tracking-widest font-semibold">Founder · AQ Wealth University</div>
         </div>
       </div>
-    </div>
-    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-      <a href="{{ route('home') }}#contact" class="btn-gold text-base">Apply for Mentorship →</a>
-      <a href="/pricing" class="btn-outline text-base">See Credit Repair Packages</a>
     </div>
   </div>
 </section>

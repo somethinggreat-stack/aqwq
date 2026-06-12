@@ -41,7 +41,6 @@
           @else
             <a href="{{ route('home') }}#contact" class="btn-gold text-base">Apply for the Blueprint →</a>
           @endif
-          <a href="{{ route('home') }}#contact" class="btn-ghost text-base">Talk to an Advisor</a>
         </div>
       </div>
 
@@ -148,13 +147,6 @@
       </div>
       @endforeach
     </div>
-    <div class="mt-12 text-center">
-      @if(config('site.links.checkout_business_blueprint'))
-        <a href="{{ config('site.links.checkout_business_blueprint') }}" target="_blank" rel="noopener" class="btn-gold text-base">Start My Business Blueprint →</a>
-      @else
-        <a href="{{ route('home') }}#contact" class="btn-gold text-base">Apply for the Blueprint →</a>
-      @endif
-    </div>
   </div>
 </section>
 
@@ -164,9 +156,8 @@
     <div class="eyebrow justify-center">Next Step</div>
     <h2 class="section-title mb-4">Once your business is set up,<br/>you're ready to get funded.</h2>
     <p class="section-sub mx-auto mb-8">A properly structured business can access personal lines, business credit cards, SBA-backed loans, and 0% APR credit lines. We can help with all of it.</p>
-    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+    <div class="flex justify-center">
       <a href="{{ route('funding') }}" class="btn-gold text-base">Explore Funding Options →</a>
-      <a href="/mentorship" class="btn-outline text-base">Learn About Mentorship</a>
     </div>
   </div>
 </section>
