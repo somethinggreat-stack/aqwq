@@ -11,15 +11,24 @@
         <img src="{{ cms_image('branding.logo', 'images/logo.jpeg') }}" alt="AQ Wealth University" class="brand-logo" loading="eager" />
       </a>
 
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
         @if($navItems->isNotEmpty())
           @foreach($navItems as $navItem)
             @php
               $urlPath = trim(parse_url($navItem->url, PHP_URL_PATH) ?? $navItem->url, '/');
               $isActive = $urlPath === $currentPath && !str_starts_with($navItem->url, '#');
+              $isCta = str_contains($navItem->url, 'fanbasis') || str_contains(strtoupper($navItem->label), 'BOOK YOUR');
             @endphp
-            <a href="{{ $navItem->url }}" target="{{ $navItem->target }}"
-               class="nav-link transition {{ $isActive ? 'active' : '' }}">{{ $navItem->label }}</a>
+            @if($isCta)
+              <a href="{{ $navItem->url }}" target="{{ $navItem->target }}" rel="noopener"
+                 class="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold tracking-wide text-royal-900 transition hover:scale-105 whitespace-nowrap"
+                 style="background:linear-gradient(135deg,#cfa12a,#dfb84a);box-shadow:0 3px 12px -3px rgba(207,161,42,0.5);">
+                {{ $navItem->label }}
+              </a>
+            @else
+              <a href="{{ $navItem->url }}" target="{{ $navItem->target }}"
+                 class="nav-link transition {{ $isActive ? 'active' : '' }}">{{ $navItem->label }}</a>
+            @endif
           @endforeach
         @else
           <a href="/services"       class="nav-link transition {{ $currentPath === 'services' ? 'active' : '' }}">Services</a>
@@ -28,15 +37,15 @@
           <a href="/business-setup" class="nav-link transition {{ $currentPath === 'business-setup' ? 'active' : '' }}">Business Setup</a>
           <a href="/funding"        class="nav-link transition {{ $currentPath === 'funding' ? 'active' : '' }}">Funding</a>
           <a href="/faq"            class="nav-link transition {{ $currentPath === 'faq' ? 'active' : '' }}">FAQ</a>
+          <a href="https://www.fanbasis.com/agency-checkout/aqwealthuniversity/9rX4P" target="_blank" rel="noopener"
+             class="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold tracking-wide text-royal-900 transition hover:scale-105 whitespace-nowrap"
+             style="background:linear-gradient(135deg,#cfa12a,#dfb84a);box-shadow:0 3px 12px -3px rgba(207,161,42,0.5);">
+            BOOK YOUR CONSULTATION NOW!
+          </a>
         @endif
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="https://www.fanbasis.com/agency-checkout/aqwealthuniversity/9rX4P" target="_blank" rel="noopener"
-           class="hidden lg:inline-flex items-center px-4 py-2 rounded-full text-xs font-bold tracking-wide text-royal-900 transition hover:scale-105"
-           style="background:linear-gradient(135deg,#cfa12a,#dfb84a);box-shadow:0 3px 12px -3px rgba(207,161,42,0.5);">
-          BOOK YOUR CONSULTATION NOW!
-        </a>
         <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="hidden sm:inline-flex btn-gold text-sm">Join the Community</a>
         <button id="menuBtn" class="lg:hidden p-2" aria-label="Open menu">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -52,7 +61,18 @@
     <nav class="px-6 py-4 flex flex-col gap-3 text-royal-800 font-medium">
       @if($navItems->isNotEmpty())
         @foreach($navItems as $navItem)
-          <a href="{{ $navItem->url }}" target="{{ $navItem->target }}" class="py-2">{{ $navItem->label }}</a>
+          @php
+            $isCta = str_contains($navItem->url, 'fanbasis') || str_contains(strtoupper($navItem->label), 'BOOK YOUR');
+          @endphp
+          @if($isCta)
+            <a href="{{ $navItem->url }}" target="{{ $navItem->target }}" rel="noopener"
+               class="text-center py-3 rounded-full text-sm font-bold tracking-wide text-royal-900"
+               style="background:linear-gradient(135deg,#cfa12a,#dfb84a);">
+              {{ $navItem->label }}
+            </a>
+          @else
+            <a href="{{ $navItem->url }}" target="{{ $navItem->target }}" class="py-2">{{ $navItem->label }}</a>
+          @endif
         @endforeach
       @else
         <a href="/services"       class="py-2">Services</a>
@@ -61,12 +81,12 @@
         <a href="/business-setup" class="py-2">Business Setup</a>
         <a href="/funding"        class="py-2">Funding</a>
         <a href="/faq"            class="py-2">FAQ</a>
+        <a href="https://www.fanbasis.com/agency-checkout/aqwealthuniversity/9rX4P" target="_blank" rel="noopener"
+           class="text-center py-3 rounded-full text-sm font-bold tracking-wide text-royal-900"
+           style="background:linear-gradient(135deg,#cfa12a,#dfb84a);">
+          BOOK YOUR CONSULTATION NOW!
+        </a>
       @endif
-      <a href="https://www.fanbasis.com/agency-checkout/aqwealthuniversity/9rX4P" target="_blank" rel="noopener"
-         class="mt-2 text-center py-3 rounded-full text-sm font-bold tracking-wide text-royal-900"
-         style="background:linear-gradient(135deg,#cfa12a,#dfb84a);">
-        BOOK YOUR CONSULTATION NOW!
-      </a>
       <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="btn-gold mt-2 text-center">Join the Community</a>
     </nav>
   </div>
