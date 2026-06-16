@@ -32,6 +32,11 @@
       </nav>
 
       <div class="flex items-center gap-3">
+        <a href="https://www.fanbasis.com/agency-checkout/aqwealthuniversity/9rX4P" target="_blank" rel="noopener"
+           class="hidden lg:inline-flex items-center px-4 py-2 rounded-full text-xs font-bold tracking-wide text-royal-900 transition hover:scale-105"
+           style="background:linear-gradient(135deg,#cfa12a,#dfb84a);box-shadow:0 3px 12px -3px rgba(207,161,42,0.5);">
+          BOOK YOUR CONSULTATION NOW!
+        </a>
         <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="hidden sm:inline-flex btn-gold text-sm">Join the Community</a>
         <button id="menuBtn" class="lg:hidden p-2" aria-label="Open menu">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -57,6 +62,11 @@
         <a href="/funding"        class="py-2">Funding</a>
         <a href="/faq"            class="py-2">FAQ</a>
       @endif
+      <a href="https://www.fanbasis.com/agency-checkout/aqwealthuniversity/9rX4P" target="_blank" rel="noopener"
+         class="mt-2 text-center py-3 rounded-full text-sm font-bold tracking-wide text-royal-900"
+         style="background:linear-gradient(135deg,#cfa12a,#dfb84a);">
+        BOOK YOUR CONSULTATION NOW!
+      </a>
       <a href="{{ config('site.links.skool', '#contact') }}" target="_blank" rel="noopener" class="btn-gold mt-2 text-center">Join the Community</a>
     </nav>
   </div>

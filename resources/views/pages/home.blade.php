@@ -69,6 +69,13 @@
           <a href="#pricing" class="btn-gold text-base">{{ cms('home.hero.cta_primary', 'Start Building Wealth →') }}</a>
           <a href="#services" class="btn-ghost text-base">{{ cms('home.hero.cta_secondary', 'Explore Services') }}</a>
         </div>
+        <div class="hero-fade delay-5 mt-4">
+          <a href="https://www.fanbasis.com/agency-checkout/aqwealthuniversity/9rX4P" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold tracking-wide text-royal-900 transition hover:scale-105"
+             style="background:linear-gradient(135deg,#cfa12a,#dfb84a);box-shadow:0 4px 18px -4px rgba(207,161,42,0.55);">
+            📅 Book your consultation HERE
+          </a>
+        </div>
 
         <div class="hero-fade delay-5 mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-royal-100/80">
           <div class="flex items-center gap-2">
