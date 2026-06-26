@@ -51,5 +51,11 @@
 
   <script src="{{ asset('js/site.js') }}" defer></script>
   @stack('scripts')
+
+  {{-- GoHighLevel Chat Widget --}}
+  <script src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6a17658b1b5a98ef9df4881b"
+          data-source="WEB_USER"></script>
 </body>
 </html>

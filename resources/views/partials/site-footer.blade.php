@@ -44,6 +44,10 @@
             <a href="mailto:{{ config('site.contact_email') }}" class="hover:text-gold-300 transition">{{ config('site.contact_email') }}</a>
           </li>
           <li class="text-white">
+            <span class="text-gold-400 text-xs uppercase tracking-wide">Phone</span><br/>
+            <a href="tel:{{ preg_replace('/[^0-9]/', '', config('site.support.phone')) }}" class="hover:text-gold-300 transition">{{ config('site.support.phone') }}</a>
+          </li>
+          <li class="text-white">
             <span class="text-gold-400 text-xs uppercase tracking-wide">Hours</span><br/>
             {{ config('site.business_hours') }}
           </li>
@@ -55,9 +59,16 @@
 
     </div>
 
-    <div class="mt-12 pt-6 border-t border-royal-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white">
+    {{-- Disclaimer --}}
+    <div class="mt-10 pt-6 border-t border-royal-800 text-xs text-white/40 leading-relaxed text-center max-w-4xl mx-auto">
+      AQ Wealth University provides credit education, credit report analysis, and dispute assistance guidance. We do not guarantee the removal of accurate information, specific credit score increases, or any particular financial outcome. Results vary based on each individual's credit profile and circumstances. We are not a law firm and do not provide legal advice. AQ Wealth University is not affiliated with or endorsed by Equifax, Experian, TransUnion, or any government agency. For SMS communications, reply <strong class="text-white/55">STOP</strong> to opt-out or <strong class="text-white/55">HELP</strong> for assistance. Message &amp; data rates may apply.
+    </div>
+
+    <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white">
       <span>© <span data-year></span> {{ config('app.name') }}. All rights reserved.</span>
-      <div class="flex gap-6">
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/privacy-policy" class="hover:text-gold-300 transition">Privacy Policy</a>
+        <a href="/terms-of-service" class="hover:text-gold-300 transition">Terms of Service</a>
         <a href="/services" class="hover:text-gold-300 transition">Services</a>
         <a href="/pricing" class="hover:text-gold-300 transition">Pricing</a>
         <a href="/faq" class="hover:text-gold-300 transition">FAQ</a>

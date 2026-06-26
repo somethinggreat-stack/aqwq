@@ -166,6 +166,15 @@
             and email about my account. I understand my client agreement will be sent to the email above for review and signature.') }}
           </span>
         </label>
+        <label class="consent">
+          <input type="checkbox" name="sms_transactional" value="1" required>
+          <span>I consent to receive transactional messages from <strong style="color:rgba(255,255,255,0.9)">AQ Wealth University</strong> at the phone number provided. Message frequency may vary. Message &amp; Data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt-out.</span>
+        </label>
+        <label class="consent">
+          <input type="checkbox" name="sms_marketing" value="1">
+          <span>I consent to receive marketing and promotional messages from <strong style="color:rgba(255,255,255,0.9)">AQ Wealth University</strong> at the phone number provided. Message frequency may vary. Message &amp; Data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt-out.</span>
+        </label>
+        <p style="color:rgba(255,255,255,0.45);font-size:.78rem;margin-top:.5rem;">By submitting, you agree to our <a href="/privacy-policy" style="color:#cfa12a;text-decoration:underline;">Privacy Policy</a> and <a href="/terms-of-service" style="color:#cfa12a;text-decoration:underline;">Terms of Service</a>.</p>
 
         <button type="submit" class="submit-btn" id="intakeSubmit">{!! cms('intake.submit', 'Submit Intake &amp; Send My Agreement') !!}</button>
 

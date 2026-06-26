@@ -79,6 +79,17 @@
             <label class="field-label">Phone Number <span class="req">*</span></label>
             <input type="tel" name="phone" class="form-input" placeholder="(555) 123-4567" required>
           </div>
+          <div class="mt-4 space-y-2.5 text-xs text-royal-100/65 leading-relaxed">
+            <label class="flex items-start gap-2.5 cursor-pointer">
+              <input type="checkbox" name="sms_transactional" required class="mt-0.5 accent-gold-500 flex-shrink-0">
+              <span>I consent to receive transactional messages from <strong class="text-white/90">AQ Wealth University</strong> at the phone number provided. Message frequency may vary. Message &amp; Data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt-out.</span>
+            </label>
+            <label class="flex items-start gap-2.5 cursor-pointer">
+              <input type="checkbox" name="sms_marketing" class="mt-0.5 accent-gold-500 flex-shrink-0">
+              <span>I consent to receive marketing and promotional messages from <strong class="text-white/90">AQ Wealth University</strong> at the phone number provided. Message frequency may vary. Message &amp; Data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt-out.</span>
+            </label>
+            <p>By submitting, you agree to our <a href="/privacy-policy" class="underline hover:text-gold-300 transition">Privacy Policy</a> and <a href="/terms-of-service" class="underline hover:text-gold-300 transition">Terms of Service</a>.</p>
+          </div>
           <button type="button" class="quiz-final-back" data-quiz-back>← Back</button>
           <button type="submit" class="quiz-submit">Get My Free Analysis</button>
         </div>

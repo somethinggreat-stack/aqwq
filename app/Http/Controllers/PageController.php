@@ -67,6 +67,16 @@ class PageController extends Controller
         ]);
     }
 
+    public function privacyPolicy()
+    {
+        return view('pages.privacy-policy');
+    }
+
+    public function termsOfService()
+    {
+        return view('pages.terms-of-service');
+    }
+
     public function show(string $slug)
     {
         $page = Page::where('slug', $slug)->where('status', 'published')->firstOrFail();
