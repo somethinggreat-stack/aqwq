@@ -81,7 +81,7 @@
           </div>
           <div class="mt-4 space-y-2.5 text-xs text-royal-100/65 leading-relaxed">
             <label class="flex items-start gap-2.5 cursor-pointer">
-              <input type="checkbox" name="sms_transactional" required class="mt-0.5 accent-gold-500 flex-shrink-0">
+              <input type="checkbox" name="sms_transactional" class="mt-0.5 accent-gold-500 flex-shrink-0">
               <span>I consent to receive transactional messages from <strong class="text-white/90">AQ Wealth University</strong> at the phone number provided. Message frequency may vary. Message &amp; Data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt-out.</span>
             </label>
             <label class="flex items-start gap-2.5 cursor-pointer">

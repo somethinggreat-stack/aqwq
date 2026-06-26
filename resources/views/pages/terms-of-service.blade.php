@@ -94,6 +94,10 @@
         <p class="font-semibold text-royal-900 mb-1">How to Opt Out</p>
         <p class="text-royal-600">Reply <strong>STOP</strong> to any text message to opt out at any time. Reply <strong>HELP</strong> for assistance. Message and data rates may apply. Message frequency varies. Opting out will not affect your ability to receive services through other channels.</p>
       </div>
+      <div class="rounded-2xl bg-royal-50 border border-royal-100 p-5 text-sm mt-4">
+        <p class="font-semibold text-royal-900 mb-1">Carrier Liability Disclaimer</p>
+        <p class="text-royal-600">Carriers are not liable for delayed or undelivered messages. AQ Wealth University is not responsible for any delays in message delivery caused by your wireless carrier or network conditions.</p>
+      </div>
     </div>
 
     {{-- Section 06 --}}

@@ -98,7 +98,8 @@
       <div class="eyebrow mb-4">Section 03</div>
       <h2 class="font-display text-2xl font-bold text-royal-900 mb-4">How We Share Your Information</h2>
       <div class="rounded-2xl bg-gold-50 border border-gold-200 p-5 mb-6">
-        <p class="font-semibold text-royal-900 text-sm">AQ Wealth University does not sell your personal information to third parties.</p>
+        <p class="font-semibold text-royal-900 text-sm mb-2">AQ Wealth University does not sell your personal information to third parties.</p>
+        <p class="text-sm text-royal-700 font-semibold">No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. Information sharing to subcontractors in support services, such as customer service, is permitted.</p>
       </div>
       <p class="text-royal-600 mb-6 text-sm">We may share your information with the following categories of recipients, only as necessary to provide services or comply with legal requirements:</p>
       <div class="space-y-4">

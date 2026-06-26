@@ -167,7 +167,7 @@
           </span>
         </label>
         <label class="consent">
-          <input type="checkbox" name="sms_transactional" value="1" required>
+          <input type="checkbox" name="sms_transactional" value="1">
           <span>I consent to receive transactional messages from <strong style="color:rgba(255,255,255,0.9)">AQ Wealth University</strong> at the phone number provided. Message frequency may vary. Message &amp; Data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt-out.</span>
         </label>
         <label class="consent">
